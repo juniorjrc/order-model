@@ -5,5 +5,6 @@ public enum OrderStatusEnum {
     PENDING,
     PROCESSING,
     PROCESSED,
-    ERROR
+    ERROR,
+    NOTIFICATION_ERROR
 }

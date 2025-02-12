@@ -20,6 +20,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static com.juniorjrc.ordermodel.enums.OrderStatusEnum.PENDING;
@@ -59,11 +60,18 @@ public class Order {
             {@JoinColumn(name = "PRODUCT_ID")})
     private List<Product> products;
 
+    @Column(name = "CREATED_AT", columnDefinition = "DATETIME")
+    private LocalDateTime createdAt;
+
+    @Column(name = "UPDATED_AT", columnDefinition = "DATETIME")
+    private LocalDateTime updatedAt;
+
     private Order(final Customer customer,
                   final List<Product> products,
                   final OrderStatusEnum status) {
         this.customer = customer;
         this.products = products;
+        this.createdAt = LocalDateTime.now();
         this.status = status;
     }
 
@@ -74,6 +82,7 @@ public class Order {
 
     public Order updateOrderStatus(final OrderStatusEnum status) {
         this.status = status;
+        this.updatedAt = LocalDateTime.now();
         return this;
     }
 
@@ -83,6 +92,7 @@ public class Order {
         this.orderValue = orderValue;
         this.orderFinalValue = orderFinalValue;
         this.status = status;
+        this.updatedAt = LocalDateTime.now();
         return this;
     }
 }

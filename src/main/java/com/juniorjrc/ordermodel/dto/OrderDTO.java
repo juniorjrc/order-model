@@ -3,6 +3,7 @@ package com.juniorjrc.ordermodel.dto;
 import com.juniorjrc.ordermodel.enums.OrderStatusEnum;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public record OrderDTO(
@@ -12,6 +13,8 @@ public record OrderDTO(
         BigDecimal orderFinalValue,
         OrderStatusEnum status,
         String errorDetails,
-        List<ProductDTO> products
+        List<ProductDTO> products,
+        LocalDateTime createdAt,
+        LocalDateTime updatedAt
 ) {
 }
