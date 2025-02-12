@@ -68,7 +68,12 @@ public class Order {
     }
 
     public static Order createNewOrder(final Customer customer,
-                                final List<Product> products) {
+                                       final List<Product> products) {
         return new Order(customer, products, PENDING);
+    }
+
+    public Order updateOrderStatus(final OrderStatusEnum status) {
+        this.status = status;
+        return this;
     }
 }

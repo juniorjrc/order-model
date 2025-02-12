@@ -5,6 +5,6 @@ import java.util.List;
 public record CreateNewOrderRequestDTO(
         Long customerId,
         String checksum,
-        List<Long> productIds
+        List<CreatesNewOrderProductRequestDTO> products
 ) {
 }
