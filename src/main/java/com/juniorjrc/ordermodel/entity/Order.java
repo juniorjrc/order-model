@@ -76,4 +76,13 @@ public class Order {
         this.status = status;
         return this;
     }
+
+    public Order updateOrderValues(final BigDecimal orderValue,
+                                  final BigDecimal orderFinalValue,
+                                  final OrderStatusEnum status) {
+        this.orderValue = orderValue;
+        this.orderFinalValue = orderFinalValue;
+        this.status = status;
+        return this;
+    }
 }
