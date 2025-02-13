@@ -1,6 +1,6 @@
 package com.juniorjrc.ordermodel.dto;
 
-public record CreatesNewOrderProductRequestDTO(
+public record CreateNewOrderProductRequestDTO(
         Long productId,
         Integer quantity
 ) {
